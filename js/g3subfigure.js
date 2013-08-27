@@ -706,9 +706,12 @@
 						scaleYFacet = 
 							(graph.scales && graph.scales.yfacet) ? graph.scales.yfacet : "linear"
 
+						scaleYFacetFormat = 
+						  (graph.format && graph.format.yfacet) ? d3.time.format(graph.format.yfacet) : d3.time.format.iso
+
 					  return graph.labels.y + (("undefined"==d.key)?""
 						  : (" "+( scaleYFacet=="date" 
-							         ? (new Date(+d.key)).toDateString() // what about format?
+							         ? scaleYFacetFormat(new Date(+d.key))
 											 : d.key )));
           } )
         
@@ -794,6 +797,7 @@
               .fast_redraw(cellFacet)
             
           break;
+
         case "line": // different way to send values
           if(!fast)
             dataPointSelector = g3geoms[geom](cellFacet,function(d){return d3.nest().key(function(d){return d.Color}).entries(d.values)},color,clickEvent)
