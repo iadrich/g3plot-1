@@ -221,7 +221,6 @@
   
         var countFacets = allFacets.length
         
-        var facetMargin = 20
         var x = xScale_current.copy()
         
         // assume the facets contain something at all
@@ -278,7 +277,9 @@
   
         var countFacets = allFacets.length
         
-        var facetMargin = 20
+        var facetMargin = (graph.dimensions.facetMargin && !_.isUndefined(graph.dimensions.facetMargin.y)) ?
+				  graph.dimensions.facetMargin.y : 20
+        
         var y = yScale_master.copy()
         
         y.range([(countFacets-i)*(height+facetMargin)/countFacets-facetMargin,
