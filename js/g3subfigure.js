@@ -809,7 +809,7 @@
             
         case "area": // different way to send values
           if(!fast)
-            dataPointSelector = g3geoms[geom](cellFacet,function(d){return d3.nest().key(function(d){return d.Color}).entries(d.values)},color,clickEvent)
+            dataPointSelector = g3geoms[geom](cellFacet,function(d){return d3.nest().key(function(d){return d.Fill}).entries(d.values)},color,clickEvent)
               .draw(cellFacet)
           else
             g3geoms[geom](cellFacet,function(d){return [d.values]},color,clickEvent)
