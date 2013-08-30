@@ -19,7 +19,9 @@
     // ... and others
         
     var message = g3message.validate(naive_message)
-        
+       
+    // timestamp parsing - knows date type from name of aesthetic - should learn from
+    // scales. TODO
     if(message.table.timestamp)
       message.table.timestamp = message.table.timestamp.map(function(x){return new Date(+x)})
         
