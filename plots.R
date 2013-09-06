@@ -444,7 +444,7 @@ airquality_plot <- function(dataName) {
          structure=list(Rownames="row",Measurements=selfList(c("Wind","Temp"))),
          aesthetic=list(Key="Rownames",XFilterKey="Rownames",X=list("Measurements","Wind"), Y=list("Measurements","Temp")),
          #labels=list(x=field, y="Count"),
-         geom=c("point"),  # wanted to voronoi here BUT Wind:Temp has some duplicates which crash the algoritm.  need to perterb 
+         geom=c("point"),  # wanted to voronoi here BUT Wind:Temp has some duplicates which crash the algoritm.  need to perturb 
          onBrush=list(x=list(drag=list(filter=TRUE))),
          scales=list(x="linear",y="linear"),
          labels=list(x="Wind",y="Temp"),
